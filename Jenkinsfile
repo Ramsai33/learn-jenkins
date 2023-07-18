@@ -1,6 +1,6 @@
 pipeline {
 
-   label workstation
+   agent any
 
    stages{
       stage('Hello') {

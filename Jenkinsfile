@@ -1,15 +1,32 @@
-pipeline {
+    pipeline {
 
-   agent {
-   label 'ansible'
-   }
+        agent any
 
-   stages{
-      stage('Hello') {
+        stages {
 
-         steps{
-              echo 'Hello World'
+            stage('Build/compile') {
+                steps{
+                    echo 'Build'
+                }
             }
-      }
-   }
-}
+
+            stage('Unit Test') {
+                steps{
+                    echo 'Unit Test'
+                }
+            }
+
+            stage('Quality control') {
+                steps{
+                    echo 'Quality control'
+                }
+            }
+
+            stage('Uploading code to centralize place') {
+                steps{
+                    echo 'Uploaded'
+                }
+            }
+        }
+
+    }
